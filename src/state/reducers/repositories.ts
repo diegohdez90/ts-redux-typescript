@@ -1,3 +1,4 @@
+import { SearchRepositoriesAction, SearchRepositoriesError, SearchRepositoriesSuccess } from "../../utils/actions/repositories";
 import { REPOSITORIES_ACTIONS } from "../../utils/constants";
 
 interface Repositories {
@@ -6,12 +7,10 @@ interface Repositories {
   data: string[];
 }
 
-interface Action {
-  type: string;
-  payload?: any;
-}
-
-const reducer = (state: Repositories, action: Action): Repositories => {
+const reducer = (
+  state: Repositories,
+  action: SearchRepositoriesAction | SearchRepositoriesSuccess | SearchRepositoriesError
+): Repositories => {
   switch (action.type) {
     case REPOSITORIES_ACTIONS.SEARCH_REPOSITORIES:
       return {
