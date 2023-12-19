@@ -1,12 +1,17 @@
 import { REPOSITORIES_ACTIONS } from "../../utils/constants";
 
 interface Repositories {
-    loading: boolean;
-    error: string | null,
-    data: string[]
+  loading: boolean;
+  error: string | null;
+  data: string[];
 }
 
-const reducer = (state: Repositories, action: any): Repositories => {
+interface Action {
+  type: string;
+  payload?: any;
+}
+
+const reducer = (state: Repositories, action: Action): Repositories => {
   switch (action.type) {
     case REPOSITORIES_ACTIONS.SEARCH_REPOSITORIES:
       return {
