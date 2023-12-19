@@ -7,9 +7,11 @@ interface Repositories {
   data: string[];
 }
 
+type Action = SearchRepositoriesAction | SearchRepositoriesSuccess | SearchRepositoriesError
+
 const reducer = (
   state: Repositories,
-  action: SearchRepositoriesAction | SearchRepositoriesSuccess | SearchRepositoriesError
+  action: Action
 ): Repositories => {
   switch (action.type) {
     case REPOSITORIES_ACTIONS.SEARCH_REPOSITORIES:
