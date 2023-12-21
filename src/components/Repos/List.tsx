@@ -7,8 +7,6 @@ interface Props {
 const List = ({
   data
 }: Props) => {
-  console.log('data', data);
-  
   return (
     <div>
       <h2>List of repos</h2>
