@@ -1,6 +1,12 @@
 import React from 'react'
 
-const List = () => {
+interface Props {
+  data: any[]
+}
+
+const List = ({
+  data
+}: Props) => {
   return (
     <div>
       <h2>List of repos</h2>
