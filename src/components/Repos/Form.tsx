@@ -23,15 +23,15 @@ const Form = ({
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('term', term);
-    
     get(term);
   }
 
   useEffect(() => {
-    console.log('data', data);
-    
-    setData(data as unknown as any[]);
+    if (data instanceof Object) {
+      if ('objects' in data) {
+        setData([...(data as unknown as any)?.objects]);
+      }
+    }
   }, [data])
 
   return (
