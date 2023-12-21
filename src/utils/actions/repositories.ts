@@ -14,3 +14,5 @@ export interface SearchRepositoriesError {
   type: REPOSITORIES_ACTIONS.SEARCH_REPOSITORIES_ERROR
   payload: string
 }
+
+export type Action = SearchRepositoriesAction | SearchRepositoriesSuccess | SearchRepositoriesError

@@ -1,4 +1,4 @@
-import { SearchRepositoriesAction, SearchRepositoriesError, SearchRepositoriesSuccess } from "../../utils/actions/repositories";
+import { Action } from "../../utils/actions/repositories";
 import { REPOSITORIES_ACTIONS } from "../../utils/constants";
 
 interface Repositories {
@@ -6,8 +6,6 @@ interface Repositories {
   error: string | null;
   data: string[];
 }
-
-type Action = SearchRepositoriesAction | SearchRepositoriesSuccess | SearchRepositoriesError
 
 const reducer = (
   state: Repositories,
